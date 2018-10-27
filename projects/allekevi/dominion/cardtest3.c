@@ -68,12 +68,12 @@ int main() {
 	}
 
 	//check that player 2 top card before cardEffect is now on discard pile
-	if (tempDeck[1][tempDeckCount[1] - 1] != game.discard[1][game.discardCount[1] - 1]) {
+	if (tempDeck[1][tempDeckCount[1]] != game.discard[1][game.discardCount[1]]) {
 		printf("old top card not discarded properly TEST FAILED\n");
 	}
 
 	//check player 2 has curse card on top of deck
-	if (game.deck[1][game.deckCount[1] - 1] != curse) {
+	if (game.deck[1][game.deckCount[1]-1] != curse) {
 		printf("curse not sucessful TEST FAILED\n");
 	}
 
@@ -92,7 +92,7 @@ int main() {
 	}
 
 	//check that sea-hag is discarded after playing
-	if (game.discard[0][game.discardCount[0] - 1] != sea_hag) {
+	if (game.discard[0][game.discardCount[0]] != sea_hag) {
 		printf("played card not discarded properly TEST FAILED\n");
 	}
 

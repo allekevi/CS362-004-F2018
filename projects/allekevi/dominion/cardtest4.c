@@ -68,11 +68,11 @@ int main() {
 		printf("card failed TEST FAILED\n");
 	}
 
-	//check player one has one more card in hand from top of deck
-	if ((tempHandCount[0] + 1) != game.handCount[0]) {
+	//check player one has same number(great hall should be discarded) in hand from top of deck
+	if (tempHandCount[0] != game.handCount[0]) {
 		printf("hand count not adjusted properly TEST FAILED\n");
 	}
-	if (tempDeck[0][tempDeckCount[0] - 1] != game.hand[0][game.handCount[0]]) {
+	if (tempDeck[0][tempDeckCount[0]] != game.hand[0][game.handCount[0]-1]) {
 		printf("card not added to hand TEST FAILED\n");
 	}
 
@@ -82,7 +82,7 @@ int main() {
 	}
 
 	//check player discarded great hall
-	if (game.discard[0][game.discardCount[0] - 1] != great_hall) {
+	if (game.discard[0][game.discardCount[0]] != great_hall) {
 		printf("card not discarded TEST FAILED\n");
 	}
 

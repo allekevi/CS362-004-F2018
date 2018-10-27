@@ -50,7 +50,7 @@ int main() {
 	//get first 3 cards from player 1's deck
 	int tempPlayerDeck[3];
 	for (i = 0; i < 3; i++) {
-		tempPlayerDeck[i] = game.deck[0][game.deckCount[0] - 1 - i];
+		tempPlayerDeck[2-i] = game.deck[0][game.deckCount[0] - 1 - i];
 	}
 
 	//get number of cards in player 1's hand before cardeffect
@@ -65,7 +65,7 @@ int main() {
 
 	//check that 3 cards added to players hand
 	for (i = 0; i < 3; i++) {
-		if (tempPlayerDeck[2 - i] != game.hand[0][game.handCount[0] - i]) {
+		if (tempPlayerDeck[2 - i] != game.hand[0][game.handCount[0] -1 - i]) {
 			printf("cards added to hand do not match TEST FAILED\n");
 		}
 	}

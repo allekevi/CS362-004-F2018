@@ -1,0 +1,52 @@
+unittest1.c:
+Testing complete
+File 'dominion.c'
+Lines executed:1.78% of 562
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+tests complete
+File 'dominion.c'
+Lines executed:17.97% of 562
+Creating 'dominion.c.gcov'
+
+unittest3.c:
+testing complete
+File 'dominion.c'
+Lines executed:19.75% of 562
+Creating 'dominion.c.gcov'
+
+unittest4.c:
+testing complete
+File 'dominion.c'
+Lines executed:22.42% of 562
+Creating 'dominion.c.gcov'
+
+cardtest1.c:
+adventurer failed to properly discard TEST FAILED
+testing completed
+File 'dominion.c'
+Lines executed:25.98% of 562
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+hand counter not incremented correctly TEST FAILED
+card not properly discarded TEST FAILED
+File 'dominion.c'
+Lines executed:29.36% of 562
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+curse not sucessful TEST FAILED
+number of curses not decreased TEST FAILED
+played card not discarded properly TEST FAILED
+File 'dominion.c'
+Lines executed:31.14% of 562
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+card not discarded TEST FAILED
+File 'dominion.c'
+Lines executed:32.56% of 562
+Creating 'dominion.c.gcov'
+

@@ -2,24 +2,36 @@ unittest1.c:
 Testing complete
 File 'dominion.c'
 Lines executed:1.78% of 562
+Branches executed:6.73% of 416
+Taken at least once:1.92% of 416
+Calls executed:0.00% of 95
 Creating 'dominion.c.gcov'
 
 unittest2.c:
 tests complete
 File 'dominion.c'
 Lines executed:17.97% of 562
+Branches executed:22.60% of 416
+Taken at least once:15.14% of 416
+Calls executed:7.37% of 95
 Creating 'dominion.c.gcov'
 
 unittest3.c:
 testing complete
 File 'dominion.c'
 Lines executed:19.75% of 562
+Branches executed:24.52% of 416
+Taken at least once:17.07% of 416
+Calls executed:7.37% of 95
 Creating 'dominion.c.gcov'
 
 unittest4.c:
 testing complete
 File 'dominion.c'
 Lines executed:22.42% of 562
+Branches executed:25.96% of 416
+Taken at least once:18.51% of 416
+Calls executed:8.42% of 95
 Creating 'dominion.c.gcov'
 
 cardtest1.c:
@@ -27,6 +39,9 @@ adventurer failed to properly discard TEST FAILED
 testing completed
 File 'dominion.c'
 Lines executed:25.98% of 562
+Branches executed:28.37% of 416
+Taken at least once:19.95% of 416
+Calls executed:11.58% of 95
 Creating 'dominion.c.gcov'
 
 cardtest2.c:
@@ -34,6 +49,9 @@ hand counter not incremented correctly TEST FAILED
 card not properly discarded TEST FAILED
 File 'dominion.c'
 Lines executed:29.36% of 562
+Branches executed:30.77% of 416
+Taken at least once:21.63% of 416
+Calls executed:14.74% of 95
 Creating 'dominion.c.gcov'
 
 cardtest3.c:
@@ -42,11 +60,17 @@ number of curses not decreased TEST FAILED
 played card not discarded properly TEST FAILED
 File 'dominion.c'
 Lines executed:31.14% of 562
+Branches executed:32.21% of 416
+Taken at least once:23.08% of 416
+Calls executed:15.79% of 95
 Creating 'dominion.c.gcov'
 
 cardtest4.c:
 card not discarded TEST FAILED
 File 'dominion.c'
 Lines executed:32.56% of 562
+Branches executed:33.17% of 416
+Taken at least once:24.04% of 416
+Calls executed:18.95% of 95
 Creating 'dominion.c.gcov'
 

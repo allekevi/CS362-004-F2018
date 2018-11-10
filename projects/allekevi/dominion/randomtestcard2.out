@@ -1,0 +1,19 @@
+randomtestcard2.c:
+number of test runs: 1000
+number of discard errors: 1000
+number of hand size errors: 0
+
+number of incorrect cards added to hand: 6
+number of card errors inconclusive due to shuffle: 6
+number of incorrect amount of actions remaining: 0
+
+number of alterations to player two's cards: 0
+number of alterations to existing supply: 0
+
+File 'dominion.c'
+Lines executed:27.22% of 562
+Branches executed:23.08% of 416
+Taken at least once:18.75% of 416
+Calls executed:18.95% of 95
+Creating 'dominion.c.gcov'
+

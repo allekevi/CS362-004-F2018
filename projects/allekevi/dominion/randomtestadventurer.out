@@ -1,0 +1,21 @@
+randomtestadventurer.c:
+number of test runs: 1000
+number of discard errors: 1000
+number of hand size errors: 0
+
+number of non-treasure cards added as first card: 778
+number of incorrect treasure cards added as first card: 15
+
+number of non-treasure cards added as second card: 793
+number of incorrect treasure cards added as second card: 106
+
+number of alterations to player two's cards: 0
+number of alterations to existing supply: 0
+
+File 'dominion.c'
+Lines executed:25.62% of 562
+Branches executed:21.63% of 416
+Taken at least once:17.79% of 416
+Calls executed:15.79% of 95
+Creating 'dominion.c.gcov'
+

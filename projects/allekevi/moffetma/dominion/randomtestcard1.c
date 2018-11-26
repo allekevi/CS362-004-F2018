@@ -102,7 +102,14 @@ int main() {
 		}
 
 		//check that 3 cards added to players hand
-		for (i = 0; i < 3; i++) {
+		if (tempPlayerDeck[2] != game.hand[0][0]) {   //game.hand[0][0] because discard swaps card positions
+			cardErr++;
+			if (tempDeckCount[0] <= 3) {
+				inconErr++;
+				//if the deck is smaller than 3, smithy will shuffle cards and pre-smithy deck won't match
+			}
+		}
+		for (i = 1; i < 3; i++) {	//adjust loop, discard function swaps last card with handpos card
 			if (tempPlayerDeck[2-i] != game.hand[0][game.handCount[0] - 1 - i]) {
 				cardErr++;
 				//cards added to hand do not match

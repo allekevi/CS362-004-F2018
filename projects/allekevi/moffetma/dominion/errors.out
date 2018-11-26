@@ -1,0 +1,65 @@
+randomtestcard1.c(smithy): 
+number of test runs: 1000
+number of discard errors: 1000
+number of hand size errors: 1000
+
+number of incorrect cards added to hand: 2698
+number of card errors inconclusive due to shuffle: 58
+
+number of alterations to player two's cards: 0
+number of alterations to existing supply: 0
+
+randomtestadventurer.c:
+number of test runs: 5000
+number of discard errors: 4921
+number of hand size errors: 7883
+
+number of non-treasure cards added as first card: 4698
+number of incorrect treasure cards added as first card: 73
+
+number of non-treasure cards added as second card: 3185
+number of incorrect treasure cards added as second card: 84
+
+number of alterations to player two's cards: 0
+number of alterations to existing supply: 0
+
+randomtestcard2.c(greatHall):
+number of test runs: 1000
+number of discard errors: 1000
+number of hand size errors: 0
+
+number of incorrect cards added to hand: 6
+number of card errors inconclusive due to shuffle: 6
+number of incorrect amount of actions remaining: 0
+
+number of alterations to player two's cards: 0
+number of alterations to existing supply: 0
+
+unittest1.c:(getCost)
+Testing complete
+ 
+unittest2.c:(updateCoins)
+tests complete
+ 
+unittest3.c:(isGameOver)
+testing complete
+ 
+unittest4.c:(gainCard)
+testing complete
+ 
+cardtest1.c:(adventurer)
+adventurer failed to properly discard TEST FAILED
+testing completed
+ 
+cardtest2.c:(smithy)
+cards added to hand do not match TEST FAILED
+hand counter not incremented correctly TEST FAILED
+card not properly discarded TEST FAILED
+ 
+cardtest3.c:(sea_hag)
+curse not sucessful TEST FAILED
+number of curses not decreased TEST FAILED
+played card not discarded properly TEST FAILED
+ 
+cardtest4.c:(great_hall)
+card not discarded TEST FAILED

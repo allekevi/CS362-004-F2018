@@ -6,6 +6,9 @@ rngs.o: rngs.h rngs.c
 dominion.o: dominion.h dominion.c rngs.o
 	gcc -c dominion.c -g  $(CFLAGS)
 
+dominionDebug.o: dominion.h dominionDebug.c rngs.o
+	gcc -c dominionDebug.c -g  $(CFLAGS)
+
 playdom: dominion.o playdom.c
 	gcc -o playdom playdom.c -g dominion.o rngs.o $(CFLAGS)
 #To run playdom you need to entere: ./playdom <any integer number> like ./playdom 10*/
@@ -48,6 +51,18 @@ randomtestresults: dominion.o randomtestadventurer.c randomtestcard1.c randomtes
 	gcc -o randomtestcard2 randomtestcard2.c -g dominion.o rngs.o $(CFLAGS)
 	./randomtestcard2 >> errors.out
 	gcov -b -f dominion.c >> randomtestcard2.out
+
+debugresults: dominionDebug.o randomtestcard1.c cardtest2.c
+	echo "randomtestcard1.c(smithy): " >> debugErrors.out
+	gcc -o randomtestcard1 randomtestcard1.c -g dominionDebug.o rngs.o $(CFLAGS)
+	./randomtestcard1 >> debugErrors.out
+	gcov -b -f dominionDebug.c >> smithyDebug.out
+	echo "cardtest2.c:(smithy)" >> smithyDebug.out
+	echo " " >> debugErrors.out
+	echo "cardtest2.c:(smithy)" >> debugErrors.out
+	gcc -o cardtest2 cardtest2.c -g dominionDebug.o rngs.o $(CFLAGS)
+	./cardtest2 >> debugErrors.out
+	gcov -b -f dominionDebug.c >> smithyDebug.out
 
 unittestresults: dominion.o unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c
 	echo "unittest1.c:(getCost)" >> unittestresults.out

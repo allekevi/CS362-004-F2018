@@ -110,7 +110,7 @@ int main() {
 			}
 		}
 		for (i = 1; i < 3; i++) {	//adjust loop, discard function swaps last card with handpos card
-			if (tempPlayerDeck[2-i] != game.hand[0][game.handCount[0] - 1 - i]) {
+			if (tempPlayerDeck[2-i] != game.hand[0][game.handCount[0] - i]) {
 				cardErr++;
 				//cards added to hand do not match
 				if (tempDeckCount[0] <= 3) {
@@ -127,10 +127,7 @@ int main() {
 		}
 
 		//check that the smithy has been discarded
-		if ((tempDiscardCount[0] + 1) != game.discardCount[0]) {
-			discardErr++;
-		}
-		else if (game.discard[0][game.discardCount[0]] != smithy) {
+		if (game.playedCards[game.playedCardCount-1] != smithy) {
 			discardErr++;
 			//card not properly discarded TEST FAILED\n
 		}

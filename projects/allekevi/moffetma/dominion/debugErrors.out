@@ -1,0 +1,14 @@
+randomtestcard1.c(smithy): 
+number of test runs: 1000
+number of discard errors: 1000
+number of hand size errors: 0
+
+number of incorrect cards added to hand: 29
+number of card errors inconclusive due to shuffle: 29
+
+number of alterations to player two's cards: 0
+number of alterations to existing supply: 0
+
+ 
+cardtest2.c:(smithy)
+card not properly discarded TEST FAILED

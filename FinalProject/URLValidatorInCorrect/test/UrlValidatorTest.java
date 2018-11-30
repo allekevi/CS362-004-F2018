@@ -164,23 +164,24 @@ public class UrlValidatorTest extends TestCase {
 
 	   Random random_number = new Random();
 	   
-	   int max = 0, min = 0;
+	   int maxport = 0, minport = 0, minIP =0, maxIP=0; 
 
-	   int portNumber; 
+	   int portNumber, ipOctet; 
 
+	   String baseIP = "http://192.160.100."; 
 	   String baseURL = "http://www.google.com:";
 
 	   // loop to test random port numbers 
 	   for (int i=0; i<100; i++)
 	   {
-	   		min = -999; 
-	   		max = 99999;
+	   		minport = -999; 
+	   		maxport = 99999;
 
 	   		//generate random port number in min to max range 
 
-	   		portNumber = min + random_number.nextInt((max - min) + 1);
+	   		portNumber = minport + random_number.nextInt((maxport - minport) + 1);
 
-	   		// create testURL from base URL and port number 
+	   		// create testURL from base URL and random port number 
 
 	   		String testURL = baseURL + portNumber; 
 
@@ -188,7 +189,7 @@ public class UrlValidatorTest extends TestCase {
 	   		if(portNumber >= 0 && portNumber <= 65535)
 	   		{
 	   			if(!validator.isValid(testURL))
-	   				System.out.println("TEST FAILED - Port " + portNumber + " is valid! ");
+	   				System.out.println("TEST FAILED - Port " + portNumber + " is valid!");
 	   		}
 	   		else {
 	   			if (validator.isValid(testURL))
@@ -197,6 +198,29 @@ public class UrlValidatorTest extends TestCase {
 
 	   		//clear testURL to run again 
 	   		testURL = ""; 
+
+	   		// generate random number for 4th IP octet 
+	   		minIP = 0; 
+	   		maxIP = 999; 
+
+	   		ipOctet = minIP + random_number.nextInt((maxIP - minIP) + 1);
+
+	   		// create test IP URL with baseIP URL and random 4th octet 
+	   		String testIP = baseIP + ipOctet; 
+
+	   		// test for false negatives and false positives of valid / invalid IP URLs 
+	   		if(ipOctet < 256)
+	   		{
+	   			if(!validator.isValid(testIP))
+	   				System.out.println("TEST FAILED - IP octet " + testIP + " is valid!");
+	   		}
+	   		else {
+	   			if(validator.isValid(testIP))
+	   			System.out.println("TEST FAILED - IP ip octet " + testIP + " is invalid!");
+	   		}
+
+	   		// clear test IP URL to run again 
+	   		testIP = ""; 
 	   }
    }
    

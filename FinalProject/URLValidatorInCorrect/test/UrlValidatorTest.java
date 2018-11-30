@@ -108,49 +108,50 @@ public class UrlValidatorTest extends TestCase {
    public void testYourSecondPartition(){
 	   System.out.println();
 	   System.out.println("2nd Partition");
-	   //array of schemes to test different UrlValidator constructor
-	   String[] schemes = {"https", "http", "ftp", "file"};
+	   //The second partition case will be urls which have their parts in order
+	   UrlValidator validator = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
 	   
-	   //String to act a base url to attach different valid and invalid schemes to
-	   String base = "http://www.google.";
+	   //Test 1: Valid URL
+	   if (validator.isValid("https://www.projectalpha.com/browse/#svod?method=show"))
+		   System.out.println("TEST PASSED");
+	   else
+		   System.out.println("TEST FAILED");
 	   
-	   //array containing valid TLDs
-	   String[] validTLD = {"com", "org", "edu", "net"};
+	   //Test 2: All components invalid
+	   if (!validator.isValid("htp://w.project.abcedfg:123456789//show?!try=this"))
+		   System.out.println("TEST PASSED");
+	   else
+		   System.out.println("TEST FAILED");
 	   
-	   //array containing invalid TLDS
-	   String[] invalidTLD = {"/", "342", "12://", "2test", ":-", "8=D"};
+	   //Test 3: Mixed validity
+	   if (!validator.isValid("https://ww.projectalpha.com/browse/#svod??method=show"))
+		   System.out.println("TEST PASSED");
+	   else
+		   System.out.println("TEST FAILED");
 	   
-	   UrlValidator urlValAll = new UrlValidator(UrlValidator.ALLOW_ALL_SCHEMES);
-	   UrlValidator urlValDefault = new UrlValidator();
-	   UrlValidator urlValScheme = new UrlValidator(schemes);
+	   //Test 4: Missing components
+	   if (!validator.isValid("://www.projectalpha/browse/#svod?method=show"))
+		   System.out.println("TEST PASSED");
+	   else
+		   System.out.println("TEST FAILED");
 	   
-	   //loop through valid schemes to build url
-	   for(int i =0; i < validTLD.length; i++) {
-		   String testCase = base + validTLD[i];
-		   if(!urlValDefault.isValid(testCase)) {
-			   System.out.println("default has " + testCase + " as invalid");
-		   }
-		   if (!urlValScheme.isValid(testCase)) {
-			   System.out.println("user schemes has " + testCase + " as invalid");
-		   }
-		   if (!urlValAll.isValid(testCase)) {
-			   System.out.println("ALL schemes has " + testCase + " as invalid");
-		   }
-	   }
-	   //loop through invalid schemes to build url
-	   for(int i =0; i < invalidTLD.length; i++) {
-		   String testCase = base + invalidTLD[i];
-		   if(urlValDefault.isValid(testCase)) {
-			   System.out.println("default has " + testCase + " as valid");
-		   }
-		   if (urlValScheme.isValid(testCase)) {
-			   System.out.println("user schemes has " + testCase + " as valid");
-		   }
-		   if (urlValAll.isValid(testCase)) {
-			   System.out.println("ALL schemes has " + testCase + " as valid");
-		   }
-	   }   
-
+	   //Test 5: Optional components omitted
+	   if (validator.isValid("https://www.projectalpha.com"))
+		   System.out.println("TEST PASSED");
+	   else
+		   System.out.println("TEST FAILED");
+	   
+	   //Test 6: Optional Components omitted, extant components invalid
+	   if (!validator.isValid("ps://.projectalpha.asdf"))
+		   System.out.println("TEST PASSED");
+	   else
+		   System.out.println("TEST FAILED");
+	   
+	   //Test 7: Testing special case file://
+	   if (!validator.isValid("file://test?file=component"))
+		   System.out.println("TEST PASSED");
+	   else
+		   System.out.println("TEST FAILED");
    }
    //You need to create more test cases for your Partitions if you need to 
    

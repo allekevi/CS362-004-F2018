@@ -2,6 +2,9 @@
 
 import junit.framework.TestCase;
 
+// import library for random numbers 
+import java.util.random 
+
 //You can use this as a skeleton for your 3 different test approach
 //It is an optional to use this file, you can generate your own test file(s) to test the target function!
 // Again, it is up to you to use this file or not!
@@ -157,8 +160,44 @@ public class UrlValidatorTest extends TestCase {
    
    public void testIsValid()
    {
-	   //You can use this function for programming based testing
+	   UrlValidator validator = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
 
+	   Random random_number = new Random();
+	   
+	   int max = 0, min = 0;
+
+	   int portNumber; 
+
+	   String baseURL = "http://www.google.com:";
+
+	   // loop to test random port numbers 
+	   for (int i=0; i<100; i++)
+	   {
+	   		min = -999; 
+	   		max = 99999;
+
+	   		//generate random port number in min to max range 
+
+	   		portNumber = min + random_number.nextInt((max - min) + 1);
+
+	   		// create testURL from base URL and port number 
+
+	   		String testURL = baseURL + portNumber; 
+
+	   		// test for false negatives and false positives of valid / invalid URLs w random ports 
+	   		if(portNumber >= 0 && portNumber <= 65535)
+	   		{
+	   			if(!validator.isValid(testURL))
+	   				System.out.println("TEST FAILED - Port " + portNumber + " is valid! ");
+	   		}
+	   		else {
+	   			if (validator.isValid(testURL))
+	   				System.out.println("TEST FAILED - Port " + portNumber + " is invalid!"); 
+	   		}
+
+	   		//clear testURL to run again 
+	   		testURL = ""; 
+	   }
    }
    
 
